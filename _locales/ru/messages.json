@@ -1,0 +1,23 @@
+{
+  "l10nTabName": {
+    "message":"Статистика для testauto.eu"
+  }
+  ,"l10nAnsweredRightTimes": {
+    "message":"Правельных ответов"
+  }
+  ,"l10nAnsweredTotalTimes": {
+    "message":"Всего ответов"
+  }
+  ,"l10nAnsweredRightPercentage": {
+    "message":"Процент правельных ответов"
+  }
+  ,"l10nRemoveAllData": {
+    "message":"Удалить все вопросы"
+  }
+  ,"l10nSelectLanguage": {
+    "message":"Выбрыть язык вопросов"
+  }
+  ,"l10nRightAnswer": {
+    "message":"Правельный ответ"
+  }
+}

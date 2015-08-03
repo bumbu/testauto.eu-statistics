@@ -1,0 +1,23 @@
+{
+  "l10nTabName": {
+    "message":"Statistică pentru testauto.eu"
+  }
+  ,"l10nAnsweredRightTimes": {
+    "message":"Răspuns corect"
+  }
+  ,"l10nAnsweredTotalTimes": {
+    "message":"Total răspuns"
+  }
+  ,"l10nAnsweredRightPercentage": {
+    "message":"Procentajul răspunsurilor corecte"
+  }
+  ,"l10nRemoveAllData": {
+    "message":"Șterge toate întrebările"
+  }
+  ,"l10nSelectLanguage": {
+    "message":"Selectează limba îtrebărilor"
+  }
+  ,"l10nRightAnswer": {
+    "message":"Răspunsul corect:"
+  }
+}

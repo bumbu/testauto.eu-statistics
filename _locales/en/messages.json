@@ -1,0 +1,23 @@
+{
+  "l10nTabName": {
+    "message":"Statistics for testauto.eu"
+  }
+  ,"l10nAnsweredRightTimes": {
+    "message":"Answered right times"
+  }
+  ,"l10nAnsweredTotalTimes": {
+    "message":"Total answered times"
+  }
+  ,"l10nAnsweredRightPercentage": {
+    "message":"Right answers percentage"
+  }
+  ,"l10nRemoveAllData": {
+    "message":"Remove all questions"
+  }
+  ,"l10nSelectLanguage": {
+    "message":"Select questions language"
+  }
+  ,"l10nRightAnswer": {
+    "message":"Right answer"
+  }
+}

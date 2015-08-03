@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title data-l10n="l10nTabName"></title>
+  <link href="../../css/bootstrap.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 50px 0;
+    }
+    td{
+      padding: 0 20px 0 0;
+    }
+    .panel-heading{
+      cursor: pointer;
+    }
+    .panel-footer{
+      color: #d44950;
+    }
+    .answered-right{
+      font-size: 3em;
+      color: #4f9fcf;
+    }
+    .answered-times{
+      font-size: 2em;
+      color: #2f6f9f;
+    }
+    .answered-percentage{
+      font-size: 1em;
+      padding-left: 50px;
+      /*color: #d44950;*/
+    }
+  </style>
+</head>
+<body>
+  <div style="display: none">
+    <div class="row" data-ui="answer">
+      <div class="panel panel-default">
+        <div class="panel-heading" data-action="toggle">
+          <h3 class="panel-title" data-ui="title">No title</h3>
+        </div>
+        <div class="panel-body" data-ui="togglable">
+          <table data-ui="text"></table>
+        </div>
+        <div class="panel-footer"><span data-ui="answered-right" class="answered-right" data-l10n-title="l10nAnsweredRightTimes"></span>/<span class="answered-times" data-ui="answered-times" data-l10n-title="l10nAnsweredTotalTimes"></span> <span class="answered-percentage" data-ui="answeres-percentage" data-l10n-title="l10nAnsweredRightPercentage"></span><span class="pull-right"><span class="btn btn-xs btn-default" data-action="toggle-right-answer" data-l10n="l10nRightAnswer"></span> <b data-ui="right-answer" style="display: none"></b></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="questions">
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- Select language -->
+      <div class="btn-group dropup">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span data-l10n="l10nSelectLanguage">Select language</span> <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" data-action="select-language">
+          <li><a data-language="en">English</a></li>
+          <li><a data-language="ru">Руский</a></li>
+          <li><a data-language="ro">Română</a></li>
+        </ul>
+      </div>
+      <!-- Remove all data -->
+      <button data-action="remove-all" class="btn btn-danger" data-l10n="l10nRemoveAllData"></button>
+    </div>
+  </div>
+
+  <script src="../../js/jquery-2.1.4.js"></script>
+  <script src="../../js/bootstrap.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
