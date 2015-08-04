@@ -99,6 +99,9 @@ $('[data-action="remove-all"]').on('click', function(ev){
   }
 
   $questions.empty()
+
+  // Rerender questions and stats
+  renderQuestionsAndStats()
 })
 
 function getTitle(html) {
