@@ -50,7 +50,7 @@ function renderQuestionsAndStats() {
   }
 
   for (var key in localStorage) {
-    if (key[0] != 'q') break; // Render only questions
+    if (key[0] != 'q') continue; // Render only questions
     answer = JSON.parse(localStorage[key])
 
     $template
@@ -94,7 +94,7 @@ $('[data-action="remove-all"]').on('click', function(ev){
   ev.preventDefault()
 
   for (var key in localStorage) {
-    if (key[0] != 'q') break;
+    if (key[0] != 'q') continue;
     localStorage.removeItem(key)
   }
 
