@@ -57,10 +57,10 @@ function checkIfTestPassed(list) {
 
   if (rightAnswers >= 17) {
     // Test passed
-    localStorage.setItem('testsPassed', 1 + (localStorage['testsPassed'] || 0 ))
+    localStorage.setItem('testsPassed', 1 + parseInt(localStorage['testsPassed'] || 0 ))
   } else {
     // Test failed
-    localStorage.setItem('testsFailed', 1 + (localStorage['testsFailed'] || 0 ))
+    localStorage.setItem('testsFailed', 1 + parseInt(localStorage['testsFailed'] || 0 ))
   }
 }
 
@@ -110,7 +110,6 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 })
 
 function openOrFocusOptionsPage() {
-  console.log(1)
   var optionsUrl = chrome.extension.getURL('src/options/index.html')
 
   chrome.tabs.query({}, function(extensionTabs) {
