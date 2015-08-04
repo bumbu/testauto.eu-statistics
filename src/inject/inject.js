@@ -23,7 +23,7 @@ if (workingDocument) {
 
   setTimeout(function(){// start timeout
     var communicationScript = workingDocument.createElement("script")
-    communicationScript.innerHTML = "jQuery('#ExamenResults').submit(function(ev){ev.preventDefault();console.log('poop', ev);window.postMessage({action: 'form-submited'}, '*');});"
+    communicationScript.innerHTML = "jQuery('#ExamenResults').submit(function(ev){ev.preventDefault();window.postMessage({action: 'form-submited'}, '*');});"
     workingDocument.body.appendChild(communicationScript);
 
     var communicationScript2 = workingDocument.createElement("script")
