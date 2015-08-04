@@ -98,6 +98,9 @@ $('[data-action="remove-all"]').on('click', function(ev){
     localStorage.removeItem(key)
   }
 
+  localStorage.setItem('testsPassed', 0)
+  localStorage.setItem('testsFailed', 0)
+
   $questions.empty()
 
   // Rerender questions and stats
