@@ -10,6 +10,18 @@ if (document.getElementById('PopupFrame')) {
 
 if (workingDocument) {
   jQuery(workingWindow).load(function(){
+
+  // Recache document and window
+  // It seems if we insert scripts in initial iframe - they get ignored
+  if (document.getElementById('PopupFrame')) {
+    workingDocument = document.getElementById('PopupFrame').contentDocument
+    workingWindow = document.getElementById('PopupFrame').contentWindow
+  } else {
+    workingDocument = document
+    workingWindow = window
+  }
+
+  setTimeout(function(){// start timeout
     var communicationScript = workingDocument.createElement("script")
     communicationScript.innerHTML = "jQuery('#ExamenResults').submit(function(ev){ev.preventDefault();console.log('poop', ev);window.postMessage({action: 'form-submited'}, '*');});"
     workingDocument.body.appendChild(communicationScript);
@@ -74,6 +86,6 @@ if (workingDocument) {
         }
       }
     }, false)
-
+  }, 1000) // end timeout
   })
 }
