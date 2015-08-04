@@ -73,8 +73,8 @@ function renderQuestionsAndStats() {
   $('[data-ui="question-stats-ok"]').css('width', (100 * answerStatsGroups.ok / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.ok)
   $('[data-ui="question-stats-bad"]').css('width', (100 * answerStatsGroups.bad / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.bad)
 
-  var testsPassed = localStorage['testsPassed'] || 0
-    , testsFailed = localStorage['testsFailed'] || 0
+  var testsPassed = parseInt(localStorage['testsPassed'] || 0)
+    , testsFailed = parseInt(localStorage['testsFailed'] || 0)
     , totalTests = testsPassed + testsFailed
     , $testsStatsRow = $('[data-ui="tests-stats-row"]')
 
