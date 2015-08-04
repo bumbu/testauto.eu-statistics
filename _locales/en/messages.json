@@ -2,6 +2,9 @@
   "l10nTabName": {
     "message":"Statistics for testauto.eu"
   }
+  ,"l10nPageActionTitle": {
+    "message":"View Stats"
+  }
   ,"l10nAnsweredRightTimes": {
     "message":"Answered right times"
   }
