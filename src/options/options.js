@@ -68,10 +68,23 @@ function renderQuestionsAndStats() {
     addQuestionToStatistics(answer)
   }
 
-  $('[data-ui="question-stats-perfect"]').css('width', (100 * answerStatsGroups.perfect / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.perfect)
-  $('[data-ui="question-stats-good"]').css('width', (100 * answerStatsGroups.good / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.good)
-  $('[data-ui="question-stats-ok"]').css('width', (100 * answerStatsGroups.ok / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.ok)
-  $('[data-ui="question-stats-bad"]').css('width', (100 * answerStatsGroups.bad / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.bad)
+  var totalAvailableAnswers = answerStatsGroups.perfect + answerStatsGroups.good + answerStatsGroups.ok + answerStatsGroups.bad
+    , perfectAnswersPercentage = 100 * answerStatsGroups.perfect / totalQuestions
+    , goodAnswersPercentage = 100 * answerStatsGroups.good / totalQuestions
+    , okAnswersPercentage = 100 * answerStatsGroups.ok / totalQuestions
+    , badAnswersPercentage = 100 * answerStatsGroups.bad / totalQuestions
+
+  if (totalAvailableAnswers * 2 < totalQuestions) {
+    if (perfectAnswersPercentage > 0) perfectAnswersPercentage = Math.max(2.5, perfectAnswersPercentage * 1.4)
+    if (goodAnswersPercentage > 0) goodAnswersPercentage = Math.max(2.5, goodAnswersPercentage * 1.4)
+    if (okAnswersPercentage > 0) okAnswersPercentage = Math.max(2.5, okAnswersPercentage * 1.4)
+    if (badAnswersPercentage > 0) badAnswersPercentage = Math.max(2.5, badAnswersPercentage * 1.4)
+  }
+
+  $('[data-ui="question-stats-perfect"]').css('width', perfectAnswersPercentage + '%').children('[data-ui="value"]').text(answerStatsGroups.perfect)
+  $('[data-ui="question-stats-good"]').css('width', goodAnswersPercentage + '%').children('[data-ui="value"]').text(answerStatsGroups.good)
+  $('[data-ui="question-stats-ok"]').css('width', okAnswersPercentage + '%').children('[data-ui="value"]').text(answerStatsGroups.ok)
+  $('[data-ui="question-stats-bad"]').css('width', badAnswersPercentage + '%').children('[data-ui="value"]').text(answerStatsGroups.bad)
 
   var testsPassed = parseInt(localStorage['testsPassed'] || 0)
     , testsFailed = parseInt(localStorage['testsFailed'] || 0)
