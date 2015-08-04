@@ -5,6 +5,9 @@
   ,"l10nPageActionTitle": {
     "message":"View Stats"
   }
+  ,"l10nNoStats": {
+    "message":"Right now there are no statistics here. <a href='http://testauto.eu/rom/examen'>Try passing some tests first</a>."
+  }
   ,"l10nAnsweredRightTimes": {
     "message":"Answered right times"
   }

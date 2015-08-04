@@ -5,6 +5,9 @@
   ,"l10nPageActionTitle": {
     "message":"Vezi Statistica"
   }
+  ,"l10nNoStats": {
+    "message":"La moment nu sunt date pentru statistici. <a href='http://testauto.eu/rom/examen'>Pentru început încercați să treceți testul</a>."
+  }
   ,"l10nAnsweredRightTimes": {
     "message":"Răspuns corect"
   }

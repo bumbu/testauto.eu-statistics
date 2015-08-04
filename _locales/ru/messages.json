@@ -5,6 +5,9 @@
   ,"l10nPageActionTitle": {
     "message":"Статистика"
   }
+  ,"l10nNoStats": {
+    "message":"На данный момент нету даных для статиситки. <a href='http://testauto.eu/rom/examen'>Сначала пройдите пару тестов</a>."
+  }
   ,"l10nAnsweredRightTimes": {
     "message":"Правельных ответов"
   }

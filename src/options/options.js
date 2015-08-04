@@ -99,6 +99,14 @@ function renderQuestionsAndStats() {
   } else {
     $testsStatsRow.hide()
   }
+
+  $noStats = $('[data-ui="no-stats"]')
+
+  if (totalAvailableAnswers > 0 && totalTests > 0) {
+    $noStats.hide()
+  } else {
+    $noStats.show()
+  }
 }
 
 renderQuestionsAndStats()
