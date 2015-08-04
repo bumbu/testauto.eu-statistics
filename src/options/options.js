@@ -85,7 +85,12 @@ $('[data-action="select-language"] a').click(function(ev) {
   var newLocale = $(this).data('language')
 
   if (!localStorage['locale'] || newLocale != localStorage['locale']) {
+    // Update local variable
     locale = newLocale
+    // Persist in local storage
+    localStorage['locale'] = locale
+
+    // Rerender questions
     $questions.empty()
     renderQuestions()
   }
