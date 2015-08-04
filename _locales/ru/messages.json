@@ -20,4 +20,49 @@
   ,"l10nRightAnswer": {
     "message":"Правельный ответ"
   }
+  ,"l10nQuestionsWithAnswers": {
+    "message":"Вопросы с ответами"
+  }
+  ,"l10nAnsweredPerfect": {
+    "message":"отлично"
+  }
+  ,"l10nAnsweredPerfectTitle": {
+    "message":"Ответы без ошибок"
+  }
+  ,"l10nAnsweredGood": {
+    "message":"хорошо"
+  }
+  ,"l10nAnsweredGoodTitle": {
+    "message":"Ответы почти без ошибок"
+  }
+  ,"l10nAnsweredOk": {
+    "message":"средне"
+  }
+  ,"l10nAnsweredOkTitle": {
+    "message":"Ответы с несколькими ошибками"
+  }
+  ,"l10nAnsweredBad": {
+    "message":"плохо"
+  }
+  ,"l10nAnsweredBadTitle": {
+    "message":"Ответы с множеством ошибок"
+  }
+  ,"l10nTestsResults": {
+    "message":"Результаты тестов"
+  }
+  ,"l10nSuccessfulTestsResults": {
+    "message":"пройдено"
+  }
+  ,"l10nSuccessfulTestsResultsTitle": {
+    "message":"Успеншо пройдено тестов"
+  }
+  ,"l10nUnsuccessfulTestsResults": {
+    "message":"безуспешно"
+  }
+  ,"l10nUnsuccessfulTestsResultsTitle": {
+    "message":"Безуспешно пройденых тестов"
+  }
+  ,"l10nQuestionsList": {
+    "message":"Список вопросов"
+  }
 }

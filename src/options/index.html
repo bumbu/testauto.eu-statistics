@@ -5,7 +5,7 @@
   <link href="../../css/bootstrap.css" rel="stylesheet">
   <style>
     body {
-      padding: 50px 0;
+      padding: 20px 0 50px 0;
     }
     td{
       padding: 0 20px 0 0;
@@ -46,8 +46,44 @@
     </div>
   </div>
 
-  <div class="container" id="questions">
+  <div class="container">
+    <div class="row" data-ui="tests-stats-row" style="display: none">
+      <h3 data-l10n="l10nTestsResults"></h3>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width: 0%" data-ui="tests-passed" data-toggle="tooltip" data-l10n-title="l10nSuccessfulTestsResultsTitle">
+          <span data-ui="value">0</span> <span data-l10n="l10nSuccessfulTestsResults"></span>
+        </div>
+        <div class="progress-bar progress-bar-danger" style="width: 0%" data-ui="tests-failed" data-toggle="tooltip" data-l10n-title="l10nUnsuccessfulTestsResultsTitle">
+          <span data-ui="value">0</span> <span data-l10n="l10nUnsuccessfulTestsResults"></span>
+        </div>
+      </div>
+    </div>
 
+    <div class="row">
+      <h3 data-l10n="l10nQuestionsWithAnswers"></h3>
+      <div class="progress">
+        <div class="progress-bar progress-bar-primary" style="width: 0%" data-ui="question-stats-perfect" data-toggle="tooltip" data-l10n-title="l10nAnsweredPerfectTitle">
+          <span data-ui="value">0</span> <span data-l10n="l10nAnsweredPerfect"></span>
+        </div>
+        <div class="progress-bar progress-bar-success" style="width: 0%"  data-ui="question-stats-good" data-toggle="tooltip" data-l10n-title="l10nAnsweredGoodTitle">
+          <span data-ui="value">0</span> <span data-l10n="l10nAnsweredGood"></span>
+        </div>
+        <div class="progress-bar progress-bar-warning" data-ui="question-stats-ok" style="width: 0%" data-toggle="tooltip" data-l10n-title="l10nAnsweredOkTitle">
+          <span data-ui="value">0</span> <span data-l10n="l10nAnsweredOk"></span>
+        </div>
+        <div class="progress-bar progress-bar-danger" style="width: 0%" data-ui="question-stats-bad" data-toggle="tooltip" data-l10n-title="l10nAnsweredBadTitle">
+          <span data-ui="value">0</span> <span data-l10n="l10nAnsweredBad"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <h3 data-l10n="l10nQuestionsList"></h3>
+    </div>
+
+    <div data-ui="questions"></div>
   </div>
 
   <div class="container">

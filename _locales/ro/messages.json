@@ -20,4 +20,49 @@
   ,"l10nRightAnswer": {
     "message":"Răspunsul corect:"
   }
+  ,"l10nQuestionsWithAnswers": {
+    "message":"Întrebări cu răspunsuri"
+  }
+  ,"l10nAnsweredPerfect": {
+    "message":"perfect"
+  }
+  ,"l10nAnsweredPerfectTitle": {
+    "message":"Răspunsuri fără greșeli"
+  }
+  ,"l10nAnsweredGood": {
+    "message":"corect"
+  }
+  ,"l10nAnsweredGoodTitle": {
+    "message":"Răspunsuri cu puține greșeli"
+  }
+  ,"l10nAnsweredOk": {
+    "message":"cu greșeli"
+  }
+  ,"l10nAnsweredOkTitle": {
+    "message":"Răspunsuri cu mai multe greșeli"
+  }
+  ,"l10nAnsweredBad": {
+    "message":"greșit"
+  }
+  ,"l10nAnsweredBadTitle": {
+    "message":"Răspunsuri des greșite"
+  }
+  ,"l10nTestsResults": {
+    "message":"Rezultatele testelor"
+  }
+  ,"l10nSuccessfulTestsResults": {
+    "message":"reușite"
+  }
+  ,"l10nSuccessfulTestsResultsTitle": {
+    "message":"Teste trecute reușit"
+  }
+  ,"l10nUnsuccessfulTestsResults": {
+    "message":"nereușite"
+  }
+  ,"l10nUnsuccessfulTestsResultsTitle": {
+    "message":"Teste trecute nereușit"
+  }
+  ,"l10nQuestionsList": {
+    "message":"Lista întrebărilor"
+  }
 }

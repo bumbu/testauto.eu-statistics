@@ -1,7 +1,8 @@
 var answer
   , $template = $('[data-ui="answer"]')
-  , $questions = $('#questions')
+  , $questions = $('[data-ui="questions"]')
   , locale = chrome.i18n.getMessage('@@ui_locale').split('_')[0]
+  , totalQuestions = 700
 
 // Check for locale in cache
 if (localStorage['locale']) {
@@ -23,8 +24,33 @@ $('[data-l10n-title]').each(function() {
   $this.attr('title', chrome.i18n.getMessage($this.data('l10nTitle')))
 })
 
-function renderQuestions() {
+function renderQuestionsAndStats() {
+  var answerStatsGroups = {
+      perfect: 0 // 95%
+    , good: 0 // 75%
+    , ok: 0 // 50%
+    , bad: 0 // 0%
+    }
+
+  function addQuestionToStatistics(question) {
+    var rate
+    if (question.answeredTimes > 0) {
+      rate = question.answeredRight / question.answeredTimes
+
+      if (rate >= 0.95) {
+        answerStatsGroups.perfect += 1
+      } else if (rate >= 0.75) {
+        answerStatsGroups.good += 1
+      } else if (rate >= 0.5) {
+        answerStatsGroups.ok += 1
+      } else {
+        answerStatsGroups.bad += 1
+      }
+    }
+  }
+
   for (var key in localStorage) {
+    if (key[0] != 'q') break; // Render only questions
     answer = JSON.parse(localStorage[key])
 
     $template
@@ -38,15 +64,37 @@ function renderQuestions() {
       .find('[data-ui="answeres-percentage"]').html(answer.answeredTimes ? 100 * answer.answeredRight / answer.answeredTimes + '%' : '').end()
       .find('[data-ui="right-answer"]').html(answer.rightAnswer).end()
       .appendTo($questions)
+
+    addQuestionToStatistics(answer)
+  }
+
+  $('[data-ui="question-stats-perfect"]').css('width', (100 * answerStatsGroups.perfect / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.perfect)
+  $('[data-ui="question-stats-good"]').css('width', (100 * answerStatsGroups.good / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.good)
+  $('[data-ui="question-stats-ok"]').css('width', (100 * answerStatsGroups.ok / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.ok)
+  $('[data-ui="question-stats-bad"]').css('width', (100 * answerStatsGroups.bad / totalQuestions) + '%').children('[data-ui="value"]').text(answerStatsGroups.bad)
+
+  var testsPassed = localStorage['testsPassed'] || 0
+    , testsFailed = localStorage['testsFailed'] || 0
+    , totalTests = testsPassed + testsFailed
+    , $testsStatsRow = $('[data-ui="tests-stats-row"]')
+
+  if (totalTests > 0) {
+    $testsStatsRow.show()
+
+    $('[data-ui="tests-passed"]').css('width', (100 * testsPassed / totalTests) + '%').find('[data-ui="value"]').text(testsPassed)
+    $('[data-ui="tests-failed"]').css('width', (100 * testsFailed / totalTests) + '%').find('[data-ui="value"]').text(testsFailed)
+  } else {
+    $testsStatsRow.hide()
   }
 }
 
-renderQuestions()
+renderQuestionsAndStats()
 
 $('[data-action="remove-all"]').on('click', function(ev){
   ev.preventDefault()
 
   for (var key in localStorage) {
+    if (key[0] != 'q') break;
     localStorage.removeItem(key)
   }
 
@@ -92,6 +140,10 @@ $('[data-action="select-language"] a').click(function(ev) {
 
     // Rerender questions
     $questions.empty()
-    renderQuestions()
+    renderQuestionsAndStats()
   }
+})
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
 })

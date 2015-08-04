@@ -10,7 +10,7 @@ function hashCode(str) {
     hash = (hash << 5) - hash + character
     hash = hash & hash // Convert to 32bit integer
   }
-  return ('00000000000' + (hash >>> 0)).substr(-10) // Make is always positive, length 10
+  return 'q' + ('00000000000' + (hash >>> 0)).substr(-10) // Make is always positive, length 10
 }
 
 function clone(obj) {
@@ -39,12 +39,30 @@ chrome.tabs.onUpdated.addListener(checkForValidUrl);
 chrome.extension.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.action && request.action == 'store-answers') {
+      // Check if test passed
+      checkIfTestPassed(request.data)
+
+      // Store answers
       request.data.map(function(response) {
         addResponseToStorage(response)
       })
     }
     sendResponse();
   });
+
+function checkIfTestPassed(list) {
+  var rightAnswers = list.reduce(function(prev, response){
+    return prev + (response.answer == response.rightAnswer ? 1 : 0)
+  }, 0)
+
+  if (rightAnswers >= 17) {
+    // Test passed
+    localStorage.setItem('testsPassed', 1 + (localStorage['testsPassed'] || 0 ))
+  } else {
+    // Test failed
+    localStorage.setItem('testsFailed', 1 + (localStorage['testsFailed'] || 0 ))
+  }
+}
 
 function addResponseToStorage(response) {
   var hash = hashCode(response.textRO)

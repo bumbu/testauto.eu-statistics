@@ -20,4 +20,49 @@
   ,"l10nRightAnswer": {
     "message":"Right answer"
   }
+  ,"l10nQuestionsWithAnswers": {
+    "message":"Questions with Answers"
+  }
+  ,"l10nAnsweredPerfect": {
+    "message":"perfect"
+  }
+  ,"l10nAnsweredPerfectTitle": {
+    "message":"Answers without mistakes"
+  }
+  ,"l10nAnsweredGood": {
+    "message":"good"
+  }
+  ,"l10nAnsweredGoodTitle": {
+    "message":"Answers with few mistakes"
+  }
+  ,"l10nAnsweredOk": {
+    "message":"average"
+  }
+  ,"l10nAnsweredOkTitle": {
+    "message":"Answers with often mistakes"
+  }
+  ,"l10nAnsweredBad": {
+    "message":"bad"
+  }
+  ,"l10nAnsweredBadTitle": {
+    "message":"Answers with too many mistakes"
+  }
+  ,"l10nTestsResults": {
+    "message":"Tests Results"
+  }
+  ,"l10nSuccessfulTestsResults": {
+    "message":"successful"
+  }
+  ,"l10nSuccessfulTestsResultsTitle": {
+    "message":"Successfuly passed tests"
+  }
+  ,"l10nUnsuccessfulTestsResults": {
+    "message":"unsuccessful"
+  }
+  ,"l10nUnsuccessfulTestsResultsTitle": {
+    "message":"Unsuccessfuly passed tests"
+  }
+  ,"l10nQuestionsList": {
+    "message":"Questions List"
+  }
 }
