@@ -46,6 +46,8 @@ chrome.extension.onMessage.addListener(
       request.data.map(function(response) {
         addResponseToStorage(response)
       })
+
+      chrome.extension.sendRequest({action: 'options-updated'})
     }
     sendResponse();
   });

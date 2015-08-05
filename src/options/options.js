@@ -49,6 +49,9 @@ function renderQuestionsAndStats() {
     }
   }
 
+  // Remove previous questions
+  $questions.empty()
+
   for (var key in localStorage) {
     if (key[0] != 'q') continue; // Render only questions
     answer = JSON.parse(localStorage[key])
@@ -122,8 +125,6 @@ $('[data-action="remove-all"]').on('click', function(ev){
   localStorage.setItem('testsPassed', 0)
   localStorage.setItem('testsFailed', 0)
 
-  $questions.empty()
-
   // Rerender questions and stats
   renderQuestionsAndStats()
 })
@@ -165,8 +166,6 @@ $('[data-action="select-language"] a').click(function(ev) {
     // Persist in local storage
     localStorage['locale'] = locale
 
-    // Rerender questions
-    $questions.empty()
     renderQuestionsAndStats()
   }
 })
@@ -185,3 +184,12 @@ ga('create', 'UA-34516109-3', 'auto');
 ga('set', 'checkProtocolTask', function(){}); // Removes failing protocol check. @see: http://stackoverflow.com/a/22152353/1958200
 // ga('require', 'displayfeatures');
 ga('send', 'pageview', '/options.html');
+ga('send', 'event', 'options', 'view');
+
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+  if (request.action && request.action == 'options-updated') {
+    // Update statistics and answers
+    renderQuestionsAndStats()
+    ga('send', 'event', 'options', 'reload-on-submit');
+  }
+})
